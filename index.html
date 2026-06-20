@@ -11,6 +11,8 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <canvas id="interactive-canvas" style="position: fixed; inset: 0; pointer-events: none; z-index: 1;"></canvas>
+  
   <div class="page-bg" aria-hidden="true"></div>
 
   <header class="header">
@@ -32,7 +34,7 @@
       <p class="services-label anim-pulse reveal">★ Featured Software</p>
 
       <article class="service-card service-card--featured service-card--iremoval reveal reveal-pop" style="--d: 0.1s">
-        <span class="hot-badge hot-badge--gold">★ v5.2.1</span>
+        <span class="hot-badge hot-badge--rgb-glow">★ v5.2.1</span>
         <div class="service-card-inner">
           <div class="service-visual">
             <img src="assets/iremoval_logo-1faa2f7a-2374-43ae-8e15-92aeff747f45.png" alt="iRemoval PRO" />
@@ -40,9 +42,9 @@
           <div class="service-copy">
             <h2>iRemoval PRO 5.2.1</h2>
             <div class="neon-badge-container">
-              <span class="neon-glow-badge">iPhone XS to 16 Pro Max</span>
-              <span class="neon-glow-badge">iPad 8 to iPad M3</span>
-              <span class="neon-glow-badge neon-glow-badge--cyan">iOS 18.7.2 to 26.1</span>
+              <span class="neon-glow-badge neon-glow-badge--model">iPhone XS to 16 Pro Max</span>
+              <span class="neon-glow-badge neon-glow-badge--ipad">iPad 8 to iPad M3</span>
+              <span class="neon-glow-badge neon-glow-badge--ios">iOS 18.7.2 to 26.1</span>
             </div>
             
             <div class="feature-pills">
@@ -65,99 +67,109 @@
          
         <article class="service-card service-card--a12 reveal reveal-pop" style="--d: 0.1s">
           <div class="card-shine" aria-hidden="true"></div>
-          <div class="service-visual service-visual--md">
-            <img src="assets/lu wifi a12.jpeg" alt="LU WIFI A12+" />
-          </div>
-          <h3>LU WIFI A12+</h3>
-          
-          <div class="neon-badge-container grid-badge-layout">
-            <span class="neon-glow-badge">iPhone XR to 16 Pro Max</span>
-            <span class="neon-glow-badge">iPad 8 to iPad M3</span>
-            <span class="neon-glow-badge neon-glow-badge--cyan">iOS 15 - 26.1</span>
-          </div>
+          <div class="service-card-inner">
+            <div class="service-visual service-visual--md">
+              <img src="assets/lu wifi a12.jpeg" alt="LU WIFI A12+" />
+            </div>
+            <h3>LU WIFI A12+</h3>
+            
+            <div class="neon-badge-container grid-badge-layout">
+              <span class="neon-glow-badge neon-glow-badge--model">iPhone XR to 16 Pro Max</span>
+              <span class="neon-glow-badge neon-glow-badge--ipad">iPad 8 to iPad M3</span>
+              <span class="neon-glow-badge neon-glow-badge--ios">iOS 15 - 26.1</span>
+            </div>
 
-          <div class="feature-pills grid-pills">
-            <span class="pill">Fastest no Signal Bypass</span>
-            <span class="pill">Stable Server</span>
-            <span class="pill">Full Notifications &amp; All iServices</span>
-          </div>
+            <div class="feature-pills grid-pills">
+              <span class="pill">Fastest no Signal Bypass</span>
+              <span class="pill">Stable Server</span>
+              <span class="pill">Full Notifications &amp; All iServices</span>
+            </div>
 
-          <div class="grid-actions">
-            <a href="https://www.mediafire.com/file/5xgo1azwqhop4ux/LU_WIFI_A12%252B_V1.4.0.zip/file" target="_blank" class="btn-link btn-link--download">Download</a>
-            <button class="btn-link btn-link--manual" onclick="openManual('manual-a12')">Manual</button>
+            <div class="grid-actions">
+              <a href="https://www.mediafire.com/file/5xgo1azwqhop4ux/LU_WIFI_A12%252B_V1.4.0.zip/file" target="_blank" class="btn-link btn-link--download">Download</a>
+              <button class="btn-link btn-link--manual" onclick="openManual('manual-a12')">Manual</button>
+            </div>
           </div>
         </article>
 
         <article class="service-card service-card--t2 reveal reveal-pop" style="--d: 0.2s">
           <div class="card-shine" aria-hidden="true"></div>
-          <div class="service-visual service-visual--md">
-            <img src="assets/LU_T2_logo-f585af67-fa2a-42c1-b136-bdaa410d67b0.png" alt="LU T2" />
-          </div>
-          <h3>LU T2 Macbook Tools</h3>
-          
-          <div class="neon-badge-container grid-badge-layout">
-            <span class="neon-glow-badge neon-glow-badge--green">BridgeOS 10.1-10.4</span>
-            <span class="neon-glow-badge neon-glow-badge--green">(Intel T2 Macs 2018-2020)</span>
-          </div>
+          <div class="service-card-inner">
+            <div class="service-visual service-visual--md">
+              <img src="assets/LU_T2_logo-f585af67-fa2a-42c1-b136-bdaa410d67b0.png" alt="LU T2" />
+            </div>
+            <h3>LU T2 Macbook Tools</h3>
+            
+            <div class="neon-badge-container grid-badge-layout">
+              <span class="neon-glow-badge neon-glow-badge--model">Intel T2 Macs 2018-2020</span>
+              <span class="neon-glow-badge neon-glow-badge--ios">BridgeOS 10.1 - 10.4</span>
+            </div>
 
-          <div class="feature-pills grid-pills">
-            <span class="pill">Full Untethered iCloud Bypass</span>
-            <span class="pill">No Relock On Dead Battery</span>
-            <span class="pill">Power Button Turn OFF</span>
-            <span class="pill">Touch Bar Works Perfectly</span>
-          </div>
+            <div class="feature-pills grid-pills">
+              <span class="pill">Full Untethered iCloud Bypass</span>
+              <span class="pill">No Relock On Dead Battery</span>
+              <span class="pill">Power Button Turn OFF</span>
+              <span class="pill">Touch Bar Works Perfectly</span>
+            </div>
 
-          <div class="grid-actions">
-            <a href="https://mega.nz/folder/c0sRVLAB#7xObMM3_CySyYhBTCimYuw" target="_blank" class="btn-link btn-link--download">Download</a>
-            <button class="btn-link btn-link--manual" onclick="openManual('manual-t2')">Manual</button>
+            <div class="grid-actions">
+              <a href="https://mega.nz/folder/c0sRVLAB#7xObMM3_CySyYhBTCimYuw" target="_blank" class="btn-link btn-link--download">Download</a>
+              <button class="btn-link btn-link--manual" onclick="openManual('manual-t2')">Manual</button>
+            </div>
           </div>
         </article>
 
         <article class="service-card service-card--open reveal reveal-pop" style="--d: 0.3s">
           <div class="card-shine" aria-hidden="true"></div>
-          <div class="service-visual service-visual--md">
-            <img src="assets/lu open menu.jpeg" alt="LU Open Menu" />
-          </div>
-          <h3>LU Open Menu</h3>
-          
-          <div class="neon-badge-container grid-badge-layout">
-            <span class="neon-glow-badge">All iPhones &amp; iPads</span>
-            <span class="neon-glow-badge neon-glow-badge--cyan">All iOS Versions</span>
-          </div>
+          <div class="service-card-inner">
+            <div class="service-visual service-visual--md">
+              <img src="assets/lu open menu.jpeg" alt="LU Open Menu" />
+            </div>
+            <h3>LU Open Menu</h3>
+            
+            <div class="neon-badge-container grid-badge-layout">
+              <span class="neon-glow-badge neon-glow-badge--model">All iPhones</span>
+              <span class="neon-glow-badge neon-glow-badge--ipad">All iPads</span>
+              <span class="neon-glow-badge neon-glow-badge--ios">All iOS Versions</span>
+            </div>
 
-          <div class="feature-pills grid-pills">
-            <span class="pill">Fast</span>
-            <span class="pill">Secure</span>
-            <span class="pill">Easy YouTube Guide</span>
-          </div>
+            <div class="feature-pills grid-pills">
+              <span class="pill">Fast</span>
+              <span class="pill">Secure</span>
+              <span class="pill">Easy YouTube Guide</span>
+            </div>
 
-          <div class="grid-actions">
-            <a href="https://www.mediafire.com/file/lodle5q49zjj7cv/Lu_Open_Menu_Tool_Windows_v2.8.zip/file" target="_blank" class="btn-link btn-link--download">Download</a>
-            <button class="btn-link btn-link--manual" onclick="openManual('manual-openmenu')">Manual</button>
+            <div class="grid-actions">
+              <a href="https://www.mediafire.com/file/lodle5q49zjj7cv/Lu_Open_Menu_Tool_Windows_v2.8.zip/file" target="_blank" class="btn-link btn-link--download">Download</a>
+              <button class="btn-link btn-link--manual" onclick="openManual('manual-openmenu')">Manual</button>
+            </div>
           </div>
         </article>
 
         <article class="service-card service-card--mdm reveal reveal-pop" style="--d: 0.4s">
           <div class="card-shine" aria-hidden="true"></div>
-          <div class="service-visual service-visual--md">
-            <img src="assets/mdm killer.jpeg" alt="MDM Killer" />
-          </div>
-          <h3>MDM Killer</h3>
-          
-          <div class="neon-badge-container grid-badge-layout">
-            <span class="neon-glow-badge">All iPhones &amp; iPads</span>
-            <span class="neon-glow-badge neon-glow-badge--cyan">iOS 9.0 → 26.xx</span>
-          </div>
+          <div class="service-card-inner">
+            <div class="service-visual service-visual--md">
+              <img src="assets/mdm killer.jpeg" alt="MDM Killer" />
+            </div>
+            <h3>MDM Killer</h3>
+            
+            <div class="neon-badge-container grid-badge-layout">
+              <span class="neon-glow-badge neon-glow-badge--model">All iPhones</span>
+              <span class="neon-glow-badge neon-glow-badge--ipad">All iPads</span>
+              <span class="neon-glow-badge neon-glow-badge--ios">iOS 9.0 → 26.xx</span>
+            </div>
 
-          <div class="feature-pills grid-pills">
-            <span class="pill">Fast</span>
-            <span class="pill">1 Click</span>
-            <span class="pill">Fully Automated with Simple Video guide</span>
-          </div>
+            <div class="feature-pills grid-pills">
+              <span class="pill">Fast</span>
+              <span class="pill">1 Click</span>
+              <span class="pill">Fully Automated with Simple Video guide</span>
+            </div>
 
-          <div class="grid-actions">
-            <a href="https://www.mediafire.com/folder/o8sg0leeia37g/MDM-Killer" target="_blank" class="btn-link btn-link--download">Download</a>
-            <button class="btn-link btn-link--manual" onclick="openManual('manual-mdmkiller')">Manual</button>
+            <div class="grid-actions">
+              <a href="https://www.mediafire.com/folder/o8sg0leeia37g/MDM-Killer" target="_blank" class="btn-link btn-link--download">Download</a>
+              <button class="btn-link btn-link--manual" onclick="openManual('manual-mdmkiller')">Manual</button>
+            </div>
           </div>
         </article>
       </div>
@@ -179,8 +191,7 @@
           <li><strong>Bypass the iCloud Lock:</strong> The software will initiate the bypass process. This process may take several minutes.</li>
           <li><strong>Complete the Setup:</strong> Once the bypass is complete, the device will be unlocked and ready for use.</li>
           <li><strong>iCloud Login</strong> Once the bypass is complete, You can login iCloud by Download and install the certificate from https://iremovalpro.com/cert.crt, then install the downloaded profile from Settings → VPN & Device Management. Next, go to Settings → General → About → Certificate Trust Settings and enable Full Trust for the profile (required for login). Configure your Wi-Fi proxy with Server: iremovalpro.me, Port: 2025, and Authentication: No, then reopen Settings and sign in to your iCloud account. Please be patient during login. After signing in successfully, remove the installed profile and Wi-Fi proxy settings. ✅ iCloud is now ready to use.</li>
-          <li><strong>Notifications</strong> Notifications should function normally once your device has been successfully bypassed. If notifications are not working, first restart your iPhone or iPad and check again. If the issue still persists, rebypass
-</li>
+          <li><strong>Notifications</strong> Notifications should function normally once your device has been successfully bypassed. If notifications are not working, first restart your iPhone or iPad and check again. If the issue still persists, rebypass</li>
         </ol>
       </div>
     </div>
@@ -199,10 +210,8 @@
           <li><strong>Check Your Device:</strong> Open the tool and check your device status. If it shows Supported, proceed to place your order.</li>
           <li><strong>Place Your Order:</strong> Order using your Serial Number with your authorized reseller. Once you see Order in Process, open the tool and activate your device.</li>
           <li><strong>Activate Your Device:</strong> Your order will stay in process until you open the tool and complete the activation.</li>
-          <li><strong>iCloud Login</strong> After your device has been successfully bypassed, you can sign in to iCloud by creating a backup from a non-bypassed iPhone and restoring that backup to your Wi-Fi bypassed device.
-</li>
-          <li><strong>Notifications</strong> Notifications should function normally once your device has been successfully bypassed. If notifications are not working, first restart your iPhone or iPad and check again. If the issue still persists, rebypass
-</li>
+          <li><strong>iCloud Login</strong> After your device has been successfully bypassed, you can sign in to iCloud by creating a backup from a non-bypassed iPhone and restoring that backup to your Wi-Fi bypassed device.</li>
+          <li><strong>Notifications</strong> Notifications should function normally once your device has been successfully bypassed. If notifications are not working, first restart your iPhone or iPad and check again. If the issue still persists, rebypass</li>
         </ol>
         <div class="alert-box alert-box--warning">
           <strong>Important Note:</strong> The system will automatically reject the order if the device is not activated within 6 hours. Make sure to activate your device as soon as possible to avoid cancellation.
@@ -250,46 +259,16 @@
       </div>
       <div class="modal-body">
         <ol class="step-list">
-          <li>
-    <strong>Screen Passcode Verification:</strong> 
-    Make sure the iPhone or iPad has an active screen passcode. If no passcode is configured, connect to Wi-Fi and create one. If a passcode already exists, continue to the next step.
-  </li>
-  <li>
-    <strong>Enable Web Inspector:</strong> 
-    Open the system <em>Settings</em> app, navigate to <em>Safari</em> &rarr; <em>Advanced</em>, and toggle <strong>Web Inspector</strong> to ON.
-  </li>
-  <li>
-    <strong>Clear Safari Browsing Data:</strong> 
-    Return to the main <em>Safari</em> settings page, scroll down, and select <strong>Clear History and Website Data</strong>. Confirm the action to ensure a clean session.
-  </li>
-  <li>
-    <strong>Establish Host Connection:</strong> 
-    Connect the iOS device to the computer using a certified USB cable. If prompted on the device screen, select <strong>Trust This Computer</strong> and enter the device passcode.
-  </li>
-  <li>
-    <strong>Initialize the LU OPEN MENU Tool:</strong> 
-    Launch the LU OPEN MENU application on your computer and make sure to register your device by your authorized reseller.
-  </li>
-  <li>
-    <strong>Stage the iCloud Portal:</strong> 
-    Open the native <em>Safari</em> browser on the iOS device, navigate to <code class="url-text">icloud.com</code>, and allow the landing page to load completely. Once loaded, click <strong>Next</strong> on the desktop application.
-  </li>
-  <li>
-    <strong>Activate Session Capture:</strong> 
-    Click the <strong>Start</strong> button within the desktop application interface to initiate the background token interception process.
-  </li>
-  <li>
-    <strong>Execute Authentication Handshake:</strong> 
-    On the device's Safari page, tap <strong>Sign In</strong>, select <strong>Sign in with Apple Account</strong>, and complete the local authentication prompt using Face ID, Touch ID, or the device passcode.
-  </li>
-  <li>
-    <strong>Turn OFF WIFI (Critical Step):</strong> 
-    The moment the desktop application flashes the red warning message reading <code>"WARN! TURN OFF WIFI NOW!"</code>, immediately open the iOS Control Center and <strong>disable Wi-Fi</strong> to interrupt active cloud synchronization.
-  </li>
-  <li>
-    <strong>Verify FMI Deactivation Status:</strong> 
-    Allow the desktop utility to complete token extraction until a success dialogue appears. Click the <strong>Check FMI</strong> button within the software to verify that the Find My status is successfully reporting as <strong>OFF</strong>.
-  </li>
+          <li><strong>Screen Passcode Verification:</strong> Make sure the iPhone or iPad has an active screen passcode. If no passcode is configured, connect to Wi-Fi and create one. If a passcode already exists, continue to the next step.</li>
+          <li><strong>Enable Web Inspector:</strong> Open the system <em>Settings</em> app, navigate to <em>Safari</em> &rarr; <em>Advanced</em>, and toggle <strong>Web Inspector</strong> to ON.</li>
+          <li><strong>Clear Safari Browsing Data:</strong> Return to the main <em>Safari</em> settings page, scroll down, and select <strong>Clear History and Website Data</strong>. Confirm the action to ensure a clean session.</li>
+          <li><strong>Establish Host Connection:</strong> Connect the iOS device to the computer using a certified USB cable. If prompted on the device screen, select <strong>Trust This Computer</strong> and enter the device passcode.</li>
+          <li><strong>Initialize the LU OPEN MENU Tool:</strong> Launch the LU OPEN MENU application on your computer and make sure to register your device by your authorized reseller.</li>
+          <li><strong>Stage the iCloud Portal:</strong> Open the native <em>Safari</em> browser on the iOS device, navigate to <code class="url-text">icloud.com</code>, and allow the landing page to load completely. Once loaded, click <strong>Next</strong> on the desktop application.</li>
+          <li><strong>Activate Session Capture:</strong> Click the <strong>Start</strong> button within the desktop application interface to initiate the background token interception process.</li>
+          <li><strong>Execute Authentication Handshake:</strong> On the device's Safari page, tap <strong>Sign In</strong>, select <strong>Sign in with Apple Account</strong>, and complete the local authentication prompt using Face ID, Touch ID, or the device passcode.</li>
+          <li><strong>Turn OFF WIFI (Critical Step):</strong> The moment the desktop application flashes the red warning message reading <code>"WARN! TURN OFF WIFI NOW!"</code>, immediately open the iOS Control Center and <strong>disable Wi-Fi</strong> to interrupt active cloud synchronization.</li>
+          <li><strong>Verify FMI Deactivation Status:</strong> Allow the desktop utility to complete token extraction until a success dialogue appears. Click the <strong>Check FMI</strong> button within the software to verify that the Find My status is successfully reporting as <strong>OFF</strong>.</li>
         </ol>
         <div class="video-container">
           <h5>Official Video Walkthrough</h5>
@@ -314,39 +293,15 @@
           <strong>Important Guidelines:</strong> Supported for MDM devices only. iCloud / FMI ON devices are not supported. This is a bypass service only. If the device gets relocked at any point, a re-bypass operation can be processed completely free.
         </div>
         <ol class="MDM Bypass Steps">
-  <li>
-    <strong>System Requirements & Driver Setup:</strong> 
-    Before beginning, ensure that iTunes and all necessary Apple mobile device drivers are fully installed and configured properly on your Windows or Mac host computer.
-  </li>
-  <li>
-    <strong>Device Restore:</strong> 
-    Connect your device to the computer and use iTunes or 3uTools to flash/restore your iPhone or iPad to the latest available iOS firmware.
-  </li>
-  <li>
-    <strong>Initial Setup Halt:</strong> 
-    Once the restore process completes, wait for the device to reboot to the language selection ("Hello") screen. <strong>Do not</strong> connect to a Wi-Fi network and do not advance through the setup wizard.
-  </li>
-  <li>
-    <strong>Establish Software Connection:</strong> 
-    Connect the iOS device to your PC using a high-quality USB cable, then launch the <em>MDM Killer</em> desktop application. Wait a few moments for the software to parse and display the device details.
-  </li>
-  <li>
-    <strong>Server Registration:</strong> 
-    Ensure that your iDevice serial number is registered on the tool by your authorized reseller.
-  </li>
-  <li>
-    <strong>Execute MDM Activation Bypass:</strong> 
-    Once verified and registered, click the <strong>Start Operation</strong> button inside the tool interface. The tool will begin flashing instructions through the setup terminal, do not disconnect the cable during this cycle.
-  </li>
-  <li>
-    <strong>Automated Reboot & Completion:</strong> 
-    The processing cycle takes approximately 15-20 seconds. Once completed, the phone will perform an automated power cycle/reboot.
-  </li>
-  <li>
-    <strong>Post-Bypass Verification:</strong> 
-    After the device boots back up, navigate past the initial menus normally. You can now log into your personal iCloud account, install applications from the App Store, and receive normal Apple push notifications without MDM restrictions.
-  </li>
-</ol>
+          <li><strong>System Requirements & Driver Setup:</strong> Before beginning, ensure that iTunes and all necessary Apple mobile device drivers are fully installed and configured properly on your Windows or Mac host computer.</li>
+          <li><strong>Device Restore:</strong> Connect your device to the computer and use iTunes or 3uTools to flash/restore your iPhone or iPad to the latest available iOS firmware.</li>
+          <li><strong>Initial Setup Halt:</strong> Once the restore process completes, wait for the device to reboot to the language selection ("Hello") screen. <strong>Do not</strong> connect to a Wi-Fi network and do not advance through the setup wizard.</li>
+          <li><strong>Establish Software Connection:</strong> Connect the iOS device to your PC using a high-quality USB cable, then launch the <em>MDM Killer</em> desktop application. Wait a few moments for the software to parse and display the device details.</li>
+          <li><strong>Server Registration:</strong> Ensure that your iDevice serial number is registered on the tool by your authorized reseller.</li>
+          <li><strong>Execute MDM Activation Bypass:</strong> Once verified and registered, click the <strong>Start Operation</strong> button inside the tool interface. The tool will begin flashing instructions through the setup terminal, do not disconnect the cable during this cycle.</li>
+          <li><strong>Automated Reboot & Completion:</strong> The processing cycle takes approximately 15-20 seconds. Once completed, the phone will perform an automated power cycle/reboot.</li>
+          <li><strong>Post-Bypass Verification:</strong> After the device boots back up, navigate past the initial menus normally. You can now log into your personal iCloud account, install applications from the App Store, and receive normal Apple push notifications without MDM restrictions.</li>
+        </ol>
         <div class="video-container">
           <h5>Official Video Walkthrough</h5>
           <a href="https://www.youtube.com/watch?v=m60Oh68NpyU" target="_blank" class="btn btn--video">Watch Video Guide on YouTube</a>
@@ -362,7 +317,7 @@
   </footer>
 
   <script src="script.js"></script>
-   
+    
   <script>
     function openManual(id) {
       const modal = document.getElementById(id);
