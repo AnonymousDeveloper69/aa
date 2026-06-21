@@ -1,85 +1,6 @@
 document.getElementById("year").textContent = new Date().getFullYear();
 
-const canvas = document.getElementById('interactive-canvas');
-const ctx = canvas.getContext('2d');
-let sparks = [];
-let isScrolling = false;
-let scrollTimeout;
-
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-if (reduceMotion) {
-  canvas.remove();
-}
-
-function resizeCanvas() {
-  if (canvas.parentNode) {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-  }
-}
-window.addEventListener('resize', resizeCanvas, { passive: true });
-resizeCanvas();
-
-window.addEventListener('scroll', () => {
-  isScrolling = true;
-  clearTimeout(scrollTimeout);
-  scrollTimeout = setTimeout(() => { isScrolling = false; }, 150);
-}, { passive: true });
-
-class Spark {
-  constructor(x, y) {
-    this.x = x;
-    this.y = y;
-    this.size = Math.random() * 2 + 1;
-    this.speedX = Math.random() * 1.6 - 0.8;
-    this.speedY = Math.random() * -1.5 - 0.3;
-    this.hue = Math.floor(Math.random() * 360);
-    this.life = 1.0;
-    this.decay = Math.random() * 0.03 + 0.02;
-  }
-  update() {
-    this.x += this.speedX;
-    this.y += this.speedY;
-    this.life -= this.decay;
-  }
-  draw() {
-    ctx.fillStyle = `hsla(${this.hue}, 100%, 70%, ${this.life})`;
-    ctx.beginPath();
-    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-    ctx.fill();
-  }
-}
-
-let lastMove = 0;
-window.addEventListener('mousemove', (e) => {
-  if (isScrolling || reduceMotion) return; 
-  const now = performance.now();
-  if (now - lastMove < 24) return; 
-  lastMove = now;
-  
-  if (sparks.length < 40) {
-    sparks.push(new Spark(e.clientX, e.clientY));
-  }
-}, { passive: true });
-
-function animateSparks() {
-  if (reduceMotion) return;
-  if (!isScrolling && sparks.length > 0) {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    for (let i = 0; i < sparks.length; i++) {
-      sparks[i].update();
-      sparks[i].draw();
-      if (sparks[i].life <= 0) {
-        sparks.splice(i, 1);
-        i--;
-      }
-    }
-  } else if (sparks.length === 0) {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-  }
-  requestAnimationFrame(animateSparks);
-}
-requestAnimationFrame(animateSparks);
 
 (function () {
   const reveals = document.querySelectorAll(".reveal");
@@ -101,8 +22,62 @@ requestAnimationFrame(animateSparks);
         }
       });
     },
-    { threshold: 0.05, rootMargin: "0px 0px 40px 0px" }
+    { threshold: 0.05, rootMargin: "0px 0px 60px 0px" }
   );
 
   reveals.forEach((el) => observer.observe(el));
+})();
+
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") {
+    document.querySelectorAll(".modal-overlay.is-active").forEach((m) => {
+      m.classList.remove("is-active");
+    });
+    document.body.style.overflow = "";
+  }
+});
+
+(function () {
+  if (reduceMotion) return;
+  if (window.matchMedia("(hover: none)").matches) return;
+
+  const cards = document.querySelectorAll(".service-card");
+  if (!cards.length) return;
+
+  cards.forEach((card) => {
+    let rafId = null;
+    let targetRX = 0, targetRY = 0;
+    let currentRX = 0, currentRY = 0;
+    let active = false;
+
+    const render = () => {
+      currentRX += (targetRX - currentRX) * 0.12;
+      currentRY += (targetRY - currentRY) * 0.12;
+      const inner = card.querySelector(".service-card-inner");
+      if (inner) {
+        inner.style.transform = `perspective(1000px) rotateX(${currentRX}deg) rotateY(${currentRY}deg)`;
+      }
+      if (active || Math.abs(currentRX) > 0.05 || Math.abs(currentRY) > 0.05) {
+        rafId = requestAnimationFrame(render);
+      } else {
+        if (inner) inner.style.transform = "";
+        rafId = null;
+      }
+    };
+
+    card.addEventListener("pointermove", (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = (e.clientX - rect.left) / rect.width;
+      const y = (e.clientY - rect.top) / rect.height;
+      targetRY = (x - 0.5) * 4;
+      targetRX = -(y - 0.5) * 3;
+      active = true;
+      if (!rafId) rafId = requestAnimationFrame(render);
+    }, { passive: true });
+
+    card.addEventListener("pointerleave", () => {
+      targetRX = 0; targetRY = 0; active = false;
+      if (!rafId) rafId = requestAnimationFrame(render);
+    }, { passive: true });
+  });
 })();
