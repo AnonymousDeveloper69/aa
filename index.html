@@ -101,7 +101,63 @@
 
       <div class="service-grid">
 
-        <article class="service-card service-card--a12 reveal reveal-pop" style="--d: 0.1s">
+        <article class="service-card service-card--ipad-fmi reveal reveal-pop" style="--d: 0.1s">
+          <div class="card-shine" aria-hidden="true"></div>
+          <div class="card-corner card-corner--tl" aria-hidden="true"></div>
+          <div class="card-corner card-corner--br" aria-hidden="true"></div>
+          <div class="service-card-inner">
+            <div class="service-visual service-visual--md">
+              <div class="service-visual__halo" aria-hidden="true"></div>
+              <img src="assets/ipad.jpeg" alt="iPad FMI off by SN" />
+            </div>
+            <p class="service-eyebrow service-eyebrow--sm">Best Service for iPad</p>
+            <h3>iPad FMI off by SN (INSTANT) (Wi-Fi Only)</h3>
+
+            <div class="neon-badge-container grid-badge-layout">
+              <span class="neon-glow-badge neon-glow-badge--model">iPad 7th Gen to iPad PRO M5</span>
+            </div>
+
+            <div class="feature-pills grid-pills">
+              <span class="pill">instant service & ONLY WIFI IPADS SUPPORTED</span>
+              <span class="pill">Full FMI-OFF</span>
+              <span class="pill">By SN Only (No need to connect iPad to pc)</span>
+            </div>
+
+            <div class="grid-actions">
+              <button class="btn-link btn-link--manual" style="flex: 100%;" onclick="openManual('manual-ipad-fmi')">Manual</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="service-card service-card--iwatch-fmi reveal reveal-pop" style="--d: 0.2s">
+          <div class="card-shine" aria-hidden="true"></div>
+          <div class="card-corner card-corner--tl" aria-hidden="true"></div>
+          <div class="card-corner card-corner--br" aria-hidden="true"></div>
+          <div class="service-card-inner">
+            <div class="service-visual service-visual--md">
+              <div class="service-visual__halo" aria-hidden="true"></div>
+              <img src="assets/iwatch.jpeg" alt="iWatch FMI off by SN" />
+            </div>
+            <p class="service-eyebrow service-eyebrow--sm">Deluxe Service</p>
+            <h3>iWatch FMI off by SN (INSTANT) (Wi-Fi Only)</h3>
+
+            <div class="neon-badge-container grid-badge-layout">
+              <span class="neon-glow-badge neon-glow-badge--model">iWatch 1st GEN to iWatch Series 11</span>
+            </div>
+
+            <div class="feature-pills grid-pills">
+              <span class="pill">instant service & Wi-Fi-only Apple Watches (GPS) Supported</span>
+              <span class="pill">Full FMI-OFF</span>
+              <span class="pill">By SN Only (No need to connect watch to pc)</span>
+            </div>
+
+            <div class="grid-actions">
+              <button class="btn-link btn-link--manual" style="flex: 100%;" onclick="openManual('manual-iwatch-fmi')">Manual</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="service-card service-card--a12 reveal reveal-pop" style="--d: 0.3s">
           <div class="card-shine" aria-hidden="true"></div>
           <div class="card-corner card-corner--tl" aria-hidden="true"></div>
           <div class="card-corner card-corner--br" aria-hidden="true"></div>
@@ -132,7 +188,7 @@
           </div>
         </article>
 
-        <article class="service-card service-card--t2 reveal reveal-pop" style="--d: 0.2s">
+        <article class="service-card service-card--t2 reveal reveal-pop" style="--d: 0.4s">
           <div class="card-shine" aria-hidden="true"></div>
           <div class="card-corner card-corner--tl" aria-hidden="true"></div>
           <div class="card-corner card-corner--br" aria-hidden="true"></div>
@@ -163,7 +219,7 @@
           </div>
         </article>
 
-        <article class="service-card service-card--open reveal reveal-pop" style="--d: 0.3s">
+        <article class="service-card service-card--open reveal reveal-pop" style="--d: 0.5s">
           <div class="card-shine" aria-hidden="true"></div>
           <div class="card-corner card-corner--tl" aria-hidden="true"></div>
           <div class="card-corner card-corner--br" aria-hidden="true"></div>
@@ -194,7 +250,7 @@
           </div>
         </article>
 
-        <article class="service-card service-card--mdm reveal reveal-pop" style="--d: 0.4s">
+        <article class="service-card service-card--mdm reveal reveal-pop" style="--d: 0.6s">
           <div class="card-shine" aria-hidden="true"></div>
           <div class="card-corner card-corner--tl" aria-hidden="true"></div>
           <div class="card-corner card-corner--br" aria-hidden="true"></div>
@@ -358,6 +414,36 @@
           <h5>Official Video Walkthrough</h5>
           <a href="https://www.youtube.com/watch?v=m60Oh68NpyU" target="_blank" class="btn btn--video">Watch Video Guide on YouTube</a>
         </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="manual-ipad-fmi" class="modal-overlay" onclick="closeManualOnOverlay(event, 'manual-ipad-fmi')">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4>iPad FMI Off Premium Operation Manual</h4>
+        <button class="modal-close" onclick="closeManual('manual-ipad-fmi')" aria-label="Close">&times;</button>
+      </div>
+      <div class="modal-body">
+        <ol class="step-list">
+          <li><strong>Register Serial Number:</strong> Register your iPad SN with your Reseller.</li>
+          <li><strong>Processing Status:</strong> Relax, and wait for FMI-OFF.</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+
+  <div id="manual-iwatch-fmi" class="modal-overlay" onclick="closeManualOnOverlay(event, 'manual-iwatch-fmi')">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4>iWatch FMI Off Premium Operation Manual</h4>
+        <button class="modal-close" onclick="closeManual('manual-iwatch-fmi')" aria-label="Close">&times;</button>
+      </div>
+      <div class="modal-body">
+        <ol class="step-list">
+          <li><strong>Register Serial Number:</strong> Register your iWatch SN with your Reseller.</li>
+          <li><strong>Processing Status:</strong> Relax, and wait for FMI-OFF</li>
+        </ol>
       </div>
     </div>
   </div>
