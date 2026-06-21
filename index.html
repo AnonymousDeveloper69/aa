@@ -7,46 +7,69 @@
   <title>Official Tool Downloads & User Manuals</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,700;0,6..96,800;0,6..96,900;1,6..96,400&family=Manrope:wght@300;400;500;600;700;800&family=Inter:wght@500;600;700;800;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <canvas id="interactive-canvas" style="position: fixed; inset: 0; pointer-events: none; z-index: 1;"></canvas>
-  
-  <div class="page-bg" aria-hidden="true"></div>
+  <div class="page-bg" aria-hidden="true">
+    <div class="bg-aurora"></div>
+    <div class="bg-grain"></div>
+  </div>
 
   <header class="header">
+    <div class="header-inner">
+      <div class="brand-mark" aria-hidden="true">
+
+      </div>
+    </div>
   </header>
 
   <main class="landing">
     <section class="hero-marketing">
-      <div class="hero-particles" aria-hidden="true">
-        <span></span><span></span><span></span><span></span><span></span><span></span>
-        <span></span><span></span><span></span><span></span><span></span><span></span>
+      <div class="hero-ornament hero-ornament--top" aria-hidden="true">
+        <span class="hero-ornament__line"></span>
+        <span class="hero-ornament__diamond">❖</span>
+        <span class="hero-ornament__line"></span>
       </div>
       <div class="hero-text">
-        <h1 class="hero-headline anim-pop" style="--d: 0.25s">OFFICIAL TOOLS &amp;<br />USER MANUALS</h1>
-        <p class="hero-tagline anim-fade" style="--d: 0.45s">Download the latest software versions and step-by-step setup guides</p>
+        <p class="hero-eyebrow anim-fade" style="--d: 0.15s"></p>
+        <h1 class="hero-headline anim-pop" style="--d: 0.25s">
+          <span class="hero-headline__line">Official Tools</span>
+          <span class="hero-headline__amp">&amp;</span>
+          <span class="hero-headline__line hero-headline__line--accent">User Manuals</span>
+        </h1>
+        <p class="hero-tagline anim-fade" style="--d: 0.55s">Download the latest software versions and step-by-step setup guides</p>
+        <div class="hero-meta anim-fade" style="--d: 0.7s">
+          <span class="hero-meta__item"><span class="hero-meta__dot"></span> Verified Builds</span>
+          
+          
+          </div>
       </div>
     </section>
 
     <section class="services">
-      <p class="services-label anim-pulse reveal">★ Featured Software</p>
+      <p class="services-label reveal">✦ Featured Software ✦</p>
 
       <article class="service-card service-card--featured service-card--iremoval reveal reveal-pop" style="--d: 0.1s">
-        <span class="hot-badge hot-badge--rgb-glow">★ v5.2.1</span>
+        <span class="hot-badge hot-badge--rgb-glow">✦ v5.2.1</span>
+        <div class="card-corner card-corner--tl" aria-hidden="true"></div>
+        <div class="card-corner card-corner--tr" aria-hidden="true"></div>
+        <div class="card-corner card-corner--bl" aria-hidden="true"></div>
+        <div class="card-corner card-corner--br" aria-hidden="true"></div>
         <div class="service-card-inner">
           <div class="service-visual">
+            <div class="service-visual__halo" aria-hidden="true"></div>
             <img src="assets/iremoval_logo-1faa2f7a-2374-43ae-8e15-92aeff747f45.png" alt="iRemoval PRO" />
           </div>
           <div class="service-copy">
+            <p class="service-eyebrow">Flagship Edition</p>
             <h2>iRemoval PRO 5.2.1</h2>
             <div class="neon-badge-container">
               <span class="neon-glow-badge neon-glow-badge--model">iPhone XS to 16 Pro Max</span>
               <span class="neon-glow-badge neon-glow-badge--ipad">iPad 8 to iPad M3</span>
               <span class="neon-glow-badge neon-glow-badge--ios">iOS 18.7.2 to 26.1</span>
             </div>
-            
+
             <div class="feature-pills">
               <span class="pill">No Signal</span>
               <span class="pill">Untethered Bypass</span>
@@ -54,25 +77,42 @@
               <span class="pill">Full Notifications</span>
               <span class="pill">All iServices Supported</span>
             </div>
-             
+
             <div class="tool-actions">
-              <a href="https://mega.nz/file/qlVTUAzA#ikpBJeEX86rvKC_eNRLlfQcaUH0i0aAOpSA-eX9PYGU" target="_blank" class="btn btn--primary">Download Tool</a>
-              <button class="btn btn--secondary" onclick="openManual('manual-iremoval')">User Manual &amp; Guide</button>
+              <a href="https://mega.nz/file/qlVTUAzA#ikpBJeEX86rvKC_eNRLlfQcaUH0i0aAOpSA-eX9PYGU" target="_blank" class="btn btn--primary">
+                <span class="btn__label">Download Tool</span>
+                <span class="btn__arrow" aria-hidden="true">→</span>
+              </a>
+              <button class="btn btn--secondary" onclick="openManual('manual-iremoval')">
+                <span class="btn__label">User Manual &amp; Guide</span>
+              </button>
             </div>
           </div>
         </div>
       </article>
 
+      <div class="services-divider reveal" aria-hidden="true">
+        <span class="services-divider__line"></span>
+        <span class="services-divider__mark">◆ ◆ ◆</span>
+        <span class="services-divider__line"></span>
+      </div>
+
+      <p class="services-label services-label--small reveal">The Collection</p>
+
       <div class="service-grid">
-         
+
         <article class="service-card service-card--a12 reveal reveal-pop" style="--d: 0.1s">
           <div class="card-shine" aria-hidden="true"></div>
+          <div class="card-corner card-corner--tl" aria-hidden="true"></div>
+          <div class="card-corner card-corner--br" aria-hidden="true"></div>
           <div class="service-card-inner">
             <div class="service-visual service-visual--md">
+              <div class="service-visual__halo" aria-hidden="true"></div>
               <img src="assets/lu wifi a12.jpeg" alt="LU WIFI A12+" />
             </div>
+            <p class="service-eyebrow service-eyebrow--sm"></p>
             <h3>LU WIFI A12+</h3>
-            
+
             <div class="neon-badge-container grid-badge-layout">
               <span class="neon-glow-badge neon-glow-badge--model">iPhone XR to 16 Pro Max</span>
               <span class="neon-glow-badge neon-glow-badge--ipad">iPad 8 to iPad M3</span>
@@ -94,12 +134,16 @@
 
         <article class="service-card service-card--t2 reveal reveal-pop" style="--d: 0.2s">
           <div class="card-shine" aria-hidden="true"></div>
+          <div class="card-corner card-corner--tl" aria-hidden="true"></div>
+          <div class="card-corner card-corner--br" aria-hidden="true"></div>
           <div class="service-card-inner">
             <div class="service-visual service-visual--md">
+              <div class="service-visual__halo" aria-hidden="true"></div>
               <img src="assets/LU_T2_logo-f585af67-fa2a-42c1-b136-bdaa410d67b0.png" alt="LU T2" />
             </div>
+            <p class="service-eyebrow service-eyebrow--sm">Macbook Suite</p>
             <h3>LU T2 Macbook Tools</h3>
-            
+
             <div class="neon-badge-container grid-badge-layout">
               <span class="neon-glow-badge neon-glow-badge--model">Intel T2 Macs 2018-2020</span>
               <span class="neon-glow-badge neon-glow-badge--ios">BridgeOS 10.1 - 10.4</span>
@@ -121,12 +165,16 @@
 
         <article class="service-card service-card--open reveal reveal-pop" style="--d: 0.3s">
           <div class="card-shine" aria-hidden="true"></div>
+          <div class="card-corner card-corner--tl" aria-hidden="true"></div>
+          <div class="card-corner card-corner--br" aria-hidden="true"></div>
           <div class="service-card-inner">
             <div class="service-visual service-visual--md">
+              <div class="service-visual__halo" aria-hidden="true"></div>
               <img src="assets/lu open menu.jpeg" alt="LU Open Menu" />
             </div>
+            <p class="service-eyebrow service-eyebrow--sm">Best Open Menu Tool ever</p>
             <h3>LU Open Menu</h3>
-            
+
             <div class="neon-badge-container grid-badge-layout">
               <span class="neon-glow-badge neon-glow-badge--model">All iPhones</span>
               <span class="neon-glow-badge neon-glow-badge--ipad">All iPads</span>
@@ -148,12 +196,16 @@
 
         <article class="service-card service-card--mdm reveal reveal-pop" style="--d: 0.4s">
           <div class="card-shine" aria-hidden="true"></div>
+          <div class="card-corner card-corner--tl" aria-hidden="true"></div>
+          <div class="card-corner card-corner--br" aria-hidden="true"></div>
           <div class="service-card-inner">
             <div class="service-visual service-visual--md">
+              <div class="service-visual__halo" aria-hidden="true"></div>
               <img src="assets/mdm killer.jpeg" alt="MDM Killer" />
             </div>
+            <p class="service-eyebrow service-eyebrow--sm"></p>
             <h3>MDM Killer</h3>
-            
+
             <div class="neon-badge-container grid-badge-layout">
               <span class="neon-glow-badge neon-glow-badge--model">All iPhones</span>
               <span class="neon-glow-badge neon-glow-badge--ipad">All iPads</span>
@@ -180,7 +232,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <h4>iRemoval PRO Premium Edition Setup Manual</h4>
-        <button class="modal-close" onclick="closeManual('manual-iremoval')">&times;</button>
+        <button class="modal-close" onclick="closeManual('manual-iremoval')" aria-label="Close">&times;</button>
       </div>
       <div class="modal-body">
         <ol class="step-list">
@@ -201,7 +253,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <h4>Quick Guide to Use LU-WIFI A12+</h4>
-        <button class="modal-close" onclick="closeManual('manual-a12')">&times;</button>
+        <button class="modal-close" onclick="closeManual('manual-a12')" aria-label="Close">&times;</button>
       </div>
       <div class="modal-body">
         <ol class="step-list">
@@ -224,7 +276,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <h4>Untethered Full iCloud Bypass (Intel T2 Macs 2018-2020)</h4>
-        <button class="modal-close" onclick="closeManual('manual-t2')">&times;</button>
+        <button class="modal-close" onclick="manual-t2" aria-label="Close">&times;</button>
       </div>
       <div class="modal-body">
         <p class="modal-intro">First in the world 2026 Untethered Full iCloud bypass for all T2 Intel Macs 2018, 2019, 2020. Supports iBridge 10.0-10.5</p>
@@ -255,7 +307,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <h4>LU Open Menu Operational Instructions</h4>
-        <button class="modal-close" onclick="closeManual('manual-openmenu')">&times;</button>
+        <button class="modal-close" onclick="closeManual('manual-openmenu')" aria-label="Close">&times;</button>
       </div>
       <div class="modal-body">
         <ol class="step-list">
@@ -282,7 +334,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <h4>MDM Killer v1.0 Overview &amp; Guide</h4>
-        <button class="modal-close" onclick="closeManual('manual-mdmkiller')">&times;</button>
+        <button class="modal-close" onclick="closeManual('manual-mdmkiller')" aria-label="Close">&times;</button>
       </div>
       <div class="modal-body">
         <ul class="spec-list">
@@ -292,7 +344,7 @@
         <div class="alert-box alert-box--info">
           <strong>Important Guidelines:</strong> Supported for MDM devices only. iCloud / FMI ON devices are not supported. This is a bypass service only. If the device gets relocked at any point, a re-bypass operation can be processed completely free.
         </div>
-        <ol class="MDM Bypass Steps">
+        <ol class="mdm-bypass-steps">
           <li><strong>System Requirements & Driver Setup:</strong> Before beginning, ensure that iTunes and all necessary Apple mobile device drivers are fully installed and configured properly on your Windows or Mac host computer.</li>
           <li><strong>Device Restore:</strong> Connect your device to the computer and use iTunes or 3uTools to flash/restore your iPhone or iPad to the latest available iOS firmware.</li>
           <li><strong>Initial Setup Halt:</strong> Once the restore process completes, wait for the device to reboot to the language selection ("Hello") screen. <strong>Do not</strong> connect to a Wi-Fi network and do not advance through the setup wizard.</li>
@@ -312,18 +364,21 @@
 
   <footer class="footer reveal reveal-fade">
     <div class="footer-inner">
+      <div class="footer-ornament" aria-hidden="true">
+        <span></span><span class="footer-ornament__mark">◆</span><span></span>
+      </div>
       <p>© <span id="year"></span></p>
     </div>
   </footer>
 
   <script src="script.js"></script>
-    
+
   <script>
     function openManual(id) {
       const modal = document.getElementById(id);
       if (modal) {
         modal.classList.add('is-active');
-        document.body.style.overflow = 'hidden'; 
+        document.body.style.overflow = 'hidden';
       }
     }
 
@@ -331,7 +386,7 @@
       const modal = document.getElementById(id);
       if (modal) {
         modal.classList.remove('is-active');
-        document.body.style.overflow = ''; 
+        document.body.style.overflow = '';
       }
     }
 
