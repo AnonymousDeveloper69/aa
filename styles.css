@@ -762,6 +762,13 @@ body {
 .spec-list li::marker { color: var(--cyan); }
 .step-list strong, .spec-list strong, .modal-body strong { color: var(--ivory); font-weight: 700; }
 
+.step-divider {
+  border: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(16, 185, 129, 0.3) 50%, transparent);
+  margin: 1.5rem 0;
+}
+
 .modal-body h5 {
   font-family: var(--font-tech);
   font-size: 0.78rem;
